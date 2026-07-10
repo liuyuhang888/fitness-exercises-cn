@@ -1,5 +1,5 @@
 :root { --ink:#10213f; --muted:#64748b; --blue:#2463eb; --blue2:#4f7df0; --mint:#54c9a9; --mist:#f5f8fc; --line:#e3eaf3; }
-* { box-sizing: border-box; }
+* { box-sizing: border-box; } [hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 body { margin:0; color:var(--ink); background:#fff; font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif; }
 button,input { font:inherit; }
