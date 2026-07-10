@@ -1,0 +1,10 @@
+<view class="page safe-bottom" wx:if="{{item}}">
+  <view class="media"><image src="{{item.gif}}" mode="aspectFit"/><text>{{item.attribution}}</text></view>
+  <view class="body"><view class="eyebrow">动作 #{{item.id}}</view><view class="title">{{item.nameZh}}</view><view class="en">{{item.nameEn}}</view>
+    <view class="meta"><view><text>身体部位</text><text class="value">{{item.category}}</text></view><view><text>训练器械</text><text class="value">{{item.equipment}}</text></view><view><text>主要目标</text><text class="value">{{item.target}}</text></view></view>
+    <view class="heading">动作步骤</view><view class="step" wx:for="{{item.steps}}" wx:key="index"><text>{{index+1}}</text><view>{{item}}</view></view>
+    <view class="muscles"><text class="muscle-title">参与肌群</text><text>{{item.musclesText}}</text></view>
+    <view class="actions"><button class="save {{saved?'saved':''}}" bindtap="toggleFavorite">{{saved?'♥ 已收藏':'♡ 收藏动作'}}</button><button bindtap="random">换一个动作</button></view>
+    <view class="notice">动作仅供学习参考。如有伤病或不适，请咨询合格的医疗或训练专业人士。</view>
+  </view>
+</view>

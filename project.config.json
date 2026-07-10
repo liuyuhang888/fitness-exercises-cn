@@ -1,0 +1,14 @@
+{
+  "description":"练动库中文健身动作小程序",
+  "miniprogramRoot":"miniprogram/",
+  "projectname":"练动库",
+  "appid":"touristappid",
+  "setting":{"urlCheck":false,"es6":true,"enhance":true,"postcss":true,"minified":true},
+  "compileType":"miniprogram",
+  "libVersion":"3.6.5"
+}
+*** Add File: /workspace/sites/coding-exercises-cn/project.private.config.json.example
+{
+  "projectname": "练动库",
+  "setting": { "compileHotReLoad": true }
+}

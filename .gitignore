@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build outputs
+.next/
+out/
+dist/
+.wrangler/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local config / environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+project.private.config.json
+
+# OS files
+.DS_Store
+Thumbs.db

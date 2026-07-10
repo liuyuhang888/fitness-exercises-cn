@@ -1,0 +1,23 @@
+<view class="page safe-bottom">
+  <view class="hero">
+    <view class="brand"><view class="mark">动</view><text>练动库</text><button bindtap="random">随机动作 ↗</button></view>
+    <view class="eyebrow">科学训练，从动作开始</view>
+    <view class="title">专业的健身<text>动作数据库</text></view>
+    <view class="subtitle">收录 1,324 个标准动作，中文分步指导，让训练更准确、更安心。</view>
+    <view class="search"><text>⌕</text><input value="{{query}}" bindinput="onSearch" placeholder="搜索动作、部位或器械"/></view>
+    <view class="stats"><view><text class="num">1,324</text><text>标准动作</text></view><view><text class="num mint">10</text><text>身体部位</text></view><view><text class="num">28</text><text>器械类型</text></view></view>
+  </view>
+
+  <scroll-view class="part-scroll" scroll-x enhanced show-scrollbar="{{false}}"><view class="parts"><button wx:for="{{parts}}" wx:key="*this" data-part="{{item}}" bindtap="choosePart" class="{{activePart===item?'active':''}}">{{item}}</button></view></scroll-view>
+  <view class="toolbar"><picker mode="selector" range="{{equipment}}" bindchange="chooseEquipment"><view class="picker">器械 · {{activeEquipment}}⌄</view></picker><text>{{resultCount}} 个结果</text></view>
+
+  <view class="grid">
+    <view class="card" wx:for="{{shown}}" wx:key="id" data-id="{{item.id}}" bindtap="openDetail">
+      <view class="media"><image src="{{item.image}}" mode="aspectFit" lazy-load/><button catchtap="toggleFavorite" data-id="{{item.id}}">{{item.saved?'♥':'♡'}}</button></view>
+      <view class="content"><view class="tags"><text>{{item.category}}</text><text>{{item.equipment}}</text></view><view class="name">{{item.nameZh}}</view><view class="en">{{item.nameEn}}</view><view class="target">主要目标 · {{item.target}}</view></view>
+    </view>
+  </view>
+  <button wx:if="{{shown.length<resultCount}}" class="more" bindtap="loadMore">加载更多 · {{shown.length}}/{{resultCount}}</button>
+  <view wx:if="{{resultCount===0}}" class="empty">没有找到匹配动作，换个关键词试试。</view>
+  <view class="license">数据结构与中文说明采用 MIT 许可；媒体 © Gym visual，请遵守原许可条款。本应用不构成医疗建议。</view>
+</view>
